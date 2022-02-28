@@ -1,0 +1,12 @@
+name: Release
+
+on:
+  push:
+
+jobs:
+  release-canary:
+    name: Canary
+    uses: primer/.github/.github/workflows/release_canary.yml@main
+    secrets:
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+      npm_token: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
